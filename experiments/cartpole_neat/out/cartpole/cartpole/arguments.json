@@ -1,0 +1,7 @@
+{
+    "name": "cartpole",
+    "task": "cartpole",
+    "pop_size": 50,
+    "generation": 300,
+    "num_cores": 4
+}

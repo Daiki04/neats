@@ -37,14 +37,14 @@ def main():
 
     # NEATの設定ファイルの作成
     # custom_config: NEATの設定ファイルに記述されているパラメータを上書き
-    config_file = os.path.join(CURR_DIR, 'config', 'and.cfg')
+    config_file = os.path.join(CURR_DIR, 'config', 'circuit.cfg')
     custom_config = [
         ('NEAT', 'pop_size', args.pop_size),
         ('DefaultGenome', 'num_inputs', input_data.shape[1]),
         ('DefaultGenome', 'num_outputs', output_data.shape[1]),
     ]
     config = neat_test.make_config(config_file, custom_config=custom_config)
-    config_out_file = os.path.join(save_path, 'and.cfg')
+    config_out_file = os.path.join(save_path, 'circuit.cfg')
     config.save(config_out_file) # 設定ファイルの保存
 
     ### NEATの実行 ###
