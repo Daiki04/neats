@@ -1,0 +1,7 @@
+{
+    "name": "normal",
+    "task": "normal",
+    "pop_size": 150,
+    "generation": 500,
+    "num_cores": 4
+}
