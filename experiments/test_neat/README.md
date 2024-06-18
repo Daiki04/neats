@@ -13,6 +13,6 @@
 
 ## 実行例
 ```sh
-cd C:\Users\daiki\Documents\neats\experiments\test_neat
+cd ./experiments/test_neat
 python and.py -n test -t and -p 100 -g 200 -e mae -c 2
 ```
