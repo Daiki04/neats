@@ -1,0 +1,7 @@
+{
+    "name": "doublepole",
+    "task": "doublepole",
+    "pop_size": 150,
+    "generation": 2000,
+    "num_cores": 4
+}
