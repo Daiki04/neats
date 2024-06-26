@@ -59,6 +59,9 @@ class FloatAttribute(BaseAttribute):
             max_value = min(getattr(config, self.max_value_name),
                             (mean + (2 * stdev)))
             return uniform(min_value, max_value)
+        
+        if 'xaiver' in init_type:
+            return self.clamp(gauss(0.0, 1.0) * (2.0 / (mean + stdev)), config)
 
         raise RuntimeError("Unknown init_type {!r} for {!s}".format(getattr(config,
                                                                             self.init_type_name),

@@ -2,5 +2,5 @@ numpy
 matplotlib
 pandas
 ipykernel
-gymnasium[classic-control]
+gymnasium
 imageio

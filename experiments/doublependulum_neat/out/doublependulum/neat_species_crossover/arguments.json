@@ -1,0 +1,7 @@
+{
+    "name": "neat_species_crossover",
+    "task": "doublependulum",
+    "pop_size": 150,
+    "generation": 500,
+    "num_cores": 4
+}

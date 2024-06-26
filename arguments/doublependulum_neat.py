@@ -19,6 +19,7 @@ def get_args() -> argparse.Namespace:
         type=str,
         help='experiment name (default: "{task}")'
     )
+
     parser.add_argument(
         '-t', '--task',
         default='doublependulum', type=str,
@@ -40,6 +41,12 @@ def get_args() -> argparse.Namespace:
         '-c', '--num-cores',
         default=4, type=int,
         help='number of parallel evaluation processes (default: 4)'
+    )
+
+    parser.add_argument(
+        '-r', '--trials',
+        default=10, type=int,
+        help='number of trials (default: 10)'
     )
 
     ### 引数の解析 ###
