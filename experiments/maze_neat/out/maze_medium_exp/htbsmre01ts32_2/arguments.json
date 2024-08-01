@@ -1,0 +1,10 @@
+{
+    "name": "htbsmre01ts32",
+    "task": "medium",
+    "pop_size": 500,
+    "generation": 500,
+    "timesteps": 400,
+    "num_cores": 4,
+    "no_plot": true,
+    "trials": 10
+}

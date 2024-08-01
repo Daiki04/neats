@@ -1,0 +1,8 @@
+{
+    "name": "smre01",
+    "task": "doublependulum",
+    "pop_size": 150,
+    "generation": 500,
+    "num_cores": 4,
+    "trials": 10
+}

@@ -1,0 +1,8 @@
+{
+    "name": "tests",
+    "task": "and",
+    "pop_size": 150,
+    "generation": 300,
+    "error": "mse",
+    "num_cores": 4
+}
