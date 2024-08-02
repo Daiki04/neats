@@ -24,7 +24,7 @@ def main():
     ### 準備 ###
     args = get_args() # コマンドライン引数の取得
 
-    for trial in range(5, args.trials):
+    for trial in range(0, 5):
         # シード値を固定
         np.random.seed(trial)
         random.seed(trial)
