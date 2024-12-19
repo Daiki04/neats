@@ -24,7 +24,7 @@ from maze_neat import get_args
 def main():
     args = get_args()
 
-    for trial in  range(args.trials):
+    for trial in  range(8, args.trials):
         np.random.seed(trial)
         random.seed(trial)
 

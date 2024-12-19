@@ -1,0 +1,11 @@
+{
+    "name": "elitencocontraseed5layer5",
+    "task": "doublependulum",
+    "pop_size": 150,
+    "generation": 500,
+    "num_cores": 4,
+    "trials": 10,
+    "ns_threshold": 6.0,
+    "num_knn": 15,
+    "mcns": 0.001
+}

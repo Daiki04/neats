@@ -43,6 +43,12 @@ def get_args() -> argparse.Namespace:
     )
 
     parser.add_argument(
+        '-no', '--norm',
+        default=None, type=str,
+        help='normalization method (default: None, options: [None, smooth, l2])'
+    )
+
+    parser.add_argument(
         '-c', '--num-cores',
         default=4, type=int,
         help='number of parallel evaluation processes (default: 4)'

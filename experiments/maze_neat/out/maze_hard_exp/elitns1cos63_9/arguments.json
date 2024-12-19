@@ -1,0 +1,13 @@
+{
+    "name": "elitns1cos63",
+    "task": "hard",
+    "pop_size": 500,
+    "generation": 500,
+    "ns_threshold": 8.0,
+    "num_knn": 15,
+    "mcns": 0.001,
+    "timesteps": 400,
+    "num_cores": 4,
+    "no_plot": true,
+    "trials": 10
+}

@@ -32,7 +32,7 @@ def main():
         decode_function = neat.FeedForwardNetwork.create # ネットワークのデコード関数
 
         input_data, output_data = load_circuit(ROOT_DIR, args.task) # 目標回路の入出力データの読み込み
-        evaluator = CircuitEvaluator(input_data, output_data, error_type=args.error) # 評価器の作成
+        evaluator = CircuitEvaluator(input_data, output_data, error_type=args.error, norm_type=args.norm) # 評価器の作成
         evaluate_function = evaluator.evaluate_circuit # 評価関数
 
         # 並列評価器の初期化

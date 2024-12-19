@@ -20,13 +20,14 @@ def load_circuit(ROOT_DIR: str, data_name: str) -> tuple:
     Examples:
         input_data, output_data = load_circuit(ROOT_DIR, 'xor')
     """
-    data_file = os.path.join(ROOT_DIR, 'envs', 'circuit', 'circuit_files', f'{data_name}.txt') # データファイルのパス
-    
-    index = 0 # 行番号
-    input_size = None # 入力サイズ
-    output_size = None # 出力サイズ
-    input_data = [] # 入力データ
-    output_data = [] # 出力データ
+    data_file = os.path.join(ROOT_DIR, 'envs', 'circuit',
+                             'circuit_files', f'{data_name}.txt')  # データファイルのパス
+
+    index = 0  # 行番号
+    input_size = None  # 入力サイズ
+    output_size = None  # 出力サイズ
+    input_data = []  # 入力データ
+    output_data = []  # 出力データ
 
     ### データの読み込み ###
     with open(data_file, 'r') as file:
@@ -41,12 +42,12 @@ def load_circuit(ROOT_DIR: str, data_name: str) -> tuple:
                 output_size = int(line)
             else:
                 data = list(map(float, line.split(' ')))
-                assert len(data)==input_size+output_size
+                assert len(data) == input_size+output_size
 
                 input_data.append(data[:input_size])
                 output_data.append(data[input_size:])
 
-            index += 1 # 行番号を更新
+            index += 1  # 行番号を更新
 
     input_data = np.vstack(input_data)
     output_data = np.vstack(output_data)
@@ -57,7 +58,7 @@ def load_circuit(ROOT_DIR: str, data_name: str) -> tuple:
 class CircuitEvaluator:
     """回路の評価を行うクラス"""
 
-    def __init__(self, input_data: np.ndarray, output_data: np.ndarray, error_type: str='mse') -> None:
+    def __init__(self, input_data: np.ndarray, output_data: np.ndarray, error_type: str = 'mse') -> None:
         """コンストラクタ
 
         Args:
@@ -74,7 +75,8 @@ class CircuitEvaluator:
             evaluator = CircuitEvaluator(input_data, output_data, error_type='mse')
         """
 
-        assert error_type in ['mse', 'mae'], 'choise error_type from [mse, mae].'
+        assert error_type in [
+            'mse', 'mae'], 'choise error_type from [mse, mae].'
 
         self.input_data = input_data
         self.output_data = output_data
@@ -101,13 +103,13 @@ class CircuitEvaluator:
         output_pred = np.vstack(output_pred)
 
         ### 評価指標を計算 ###
-        if self.error_type=='mae':
+        if self.error_type == 'mae':
             error = np.mean(np.abs(self.output_data - output_pred))
         else:
             error = np.mean(np.square(self.output_data - output_pred))
 
         results = {
-            'fitness': 1.0 - error # 適応度: 1.0 - 誤差（最大化）
+            'fitness': 1.0 - error  # 適応度: 1.0 - 誤差（最大化）
         }
         return results
 
@@ -120,10 +122,11 @@ class CircuitEvaluator:
 
             print('input: ', inp, end='  ')
             print('label: ', out, end='  ')
-            print('predict: ', '[' + ' '.join( map(lambda z: f'{z: =.2f}', pred) ) + ']')
+            print('predict: ',
+                  '[' + ' '.join(map(lambda z: f'{z: =.2f}', pred)) + ']')
 
         output_pred = np.vstack(output_pred)
-        if self.error_type=='mae':
+        if self.error_type == 'mae':
             error = np.mean(np.abs(self.output_data - output_pred))
         else:
             error = np.mean(np.square(self.output_data - output_pred))

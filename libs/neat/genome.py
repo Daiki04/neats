@@ -4,6 +4,7 @@ from __future__ import division, print_function
 
 from itertools import count
 from random import choice, random, shuffle
+import numpy as np
 
 import sys
 
@@ -565,3 +566,25 @@ class DefaultGenome(object):
         for input_id, output_id in all_connections[:num_to_add]:
             connection = self.create_connection(config, input_id, output_id)
             self.connections[connection.key] = connection
+
+    def l2_norm_ctp(self):
+        """
+        Compute the L2 norm of the genome's connection weights.
+        """
+        l2 = 0.0
+        for cg in self.connections.values():
+            # l2 += cg.weight ** 2
+            l2 += sum(np.array(cg.ctp)**2)
+
+        return l2
+    
+    def smoothing_ctp(self):
+        """
+        Compute the smoothing of the genome's connection weights.
+        """
+        norm = 0.0
+
+        for cg in self.connections.values():
+            norm += sum(np.diff(cg.ctp)**2)
+
+        return norm

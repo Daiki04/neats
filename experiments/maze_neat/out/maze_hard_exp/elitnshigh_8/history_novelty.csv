@@ -1,0 +1,2 @@
+generation,id,novelty,fitness,species,parent1,parent2,num_nodes,num_connections,num_enabled_connections,num_disabled_connections
+0,75,57.86603264228782,0.695304173094712,1,-1,-1,3,18,18,0
